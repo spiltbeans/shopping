@@ -12,6 +12,8 @@ const Power = () => {
     const handleClick =() =>setPower(prev=>!prev)
     return (
         <div className={`
+            w-full
+            h-1/5
             flex
             justify-center
             py-2

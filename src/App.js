@@ -4,11 +4,11 @@ import Power from './components/Power';
 import Chatbot from './scripts/Chatbot'
 const App = () => {
   return (
-    <div className={'w-9/12 h-5/6'}>
+    <div className={'w-[270px] h-[200px]'}>
       <Header/>
       <Options/>
       <Power/>
-      <Chatbot/>
+      {/* <Chatbot/> */}
     </div>
 
   );

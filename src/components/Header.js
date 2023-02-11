@@ -12,7 +12,7 @@ const Header = () => {
     return (
         <div className={`
         w-full
-        h-full
+        h-1/5
         flex
         flex-row 
         gap-x-10 
