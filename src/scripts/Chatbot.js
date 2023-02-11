@@ -8,9 +8,9 @@ const OpenAi = () => {
     const openai = new OpenAIApi(configuration)
     openai.createCompletion({
         model: "text-davinci-003",
-        prompt: "Validate my choice to buy a GRACE KARIN Womens Casual High Waist Pencil Pants with Bow-Knot Pockets for Work is a good idea.",
-        max_tokens: 320,
-        temperature: 1,
+        prompt: "Using a friendly tone, validate my choice to buy a GRACE KARIN Womens Casual High Waist Pencil Pants with Bow-Knot Pockets for Work.",
+        max_tokens: 156,
+        temperature: 0.8,
     }).then(r => console.log(r))
     return <></>
 }
