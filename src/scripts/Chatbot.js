@@ -1,20 +1,28 @@
-import OpenAIAPI from "react-openai-api";
-
+import axios from 'axios'
 let payload = {
-    prompt: "Mario: Hi, how are you?",
-    maxTokens: 25,
-    temperature: 0.5,
-    n: 1,
+    "model": "text-davinci-003",
+    "prompt": "Say this is a test",
+    "max_tokens": 7,
+    "temperature": 0,
+    "top_p": 1,
+    "n": 1,
+    "stream": false,
+    "logprobs": null,
+    "stop": "\n"
 }
+
 const OpenAi = () => {
-    const handler = (response) => {
-        console.log(response)
-    }
-    return <OpenAIAPI
-    apiKey={process.env.OPENAI_KEY}
-    payload={payload}
-    responseHandler={handler}
-  />
+    axios({
+        method: "POST",
+        url: "https://api.openai.com/v1/completions",
+        data: payload,
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${process.env.REACT_APP_OPENAI_KEY}`
+        }
+    }).then(r => console.log(r))
+
+    return <></>
 }
 
 export default OpenAi
