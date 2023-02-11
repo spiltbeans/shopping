@@ -1,19 +1,13 @@
-import Button from "./components/Button";
-const handle = () => console.log('test1')
-const handle2 = () => console.log('test2')
-
+import Header from './components/Header'
+import Options from './components/Options';
+import Power from './components/Power';
 const App = () => {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-      <div className="App">
-        This is a test
-      </div>
-      <Button onClick={handle} message="hello" />
-      <Button onClick={handle2} message="hello2" />
-    </>
+    <div className={'w-9/12 h-5/6'}>
+      <Header/>
+      <Options/>
+      <Power/>
+    </div>
 
   );
 }

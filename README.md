@@ -7,7 +7,8 @@
 > 2. Gives shoppers the ability to disuade them from shopping beyond their means
 ---
 ## TECHNOLOGY
-- Framework: React, Tailwind
+- Framework: [React](https://reactjs.org/)
+- Libraries/CSS: [MaterialUI](https://mui.com/material-ui/getting-started/overview/), [Tailwind](https://tailwindcss.com/)
 ---
 ## PRODUCTIVITY
 - [Notes/mindmappipng: Excalidraw](https://excalidraw.com/)

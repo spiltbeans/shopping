@@ -1,3 +1,5 @@
 import { atom } from "jotai";
 
-export const appstateAtom = atom('this is a test')
+export const powerAtom = atom(true)
+export const encourageAtom = atom(true)
+export const restrainAtom = atom(true)
