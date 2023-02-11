@@ -11,7 +11,7 @@ const OpenAi = () => {
         console.log(response)
     }
     return <OpenAIAPI
-    apiKey={"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"}
+    apiKey={process.env.OPENAI_KEY}
     payload={payload}
     responseHandler={handler}
   />
