@@ -25,14 +25,14 @@ const Options = () => {
             h-full
             flex
             flex-col
-            mx-auto
             bg-slate-100
+            py-5
         `}>
-            <div className={`flex flex-row`}>
+            <div className={`flex flex-row justify-center`}>
                 <div className={`text-l`}>Encouraging</div>
                 <Switch inputProps={{ 'data-type': 'encourage' }} onChange={handleChange} checked={encourage} />
             </div>
-            <div className={`flex flex-row`}>
+            <div className={`flex flex-row justify-center`}>
                 <div className={`text-l`}>Restraining</div>
                 <Switch inputProps={{ 'data-type': 'restrain' }} onChange={handleChange} checked={restrain} />
             </div>
