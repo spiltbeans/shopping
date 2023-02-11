@@ -1,7 +1,10 @@
 # shopping
 ## PROJECT GOALS
-> Our central idea was to make people feel better about shopping
+> Our central goal was to make shoppers feel better about e-commerce
 
+> Our two achievements were:
+> 1. Give shoppers positive feedback on their purchases
+> 2. Gives shoppers the ability to disuade them from shopping beyond their means
 ---
 ## TECHNOLOGY
 - Framework: React, Tailwind
