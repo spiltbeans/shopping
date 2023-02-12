@@ -1,7 +1,10 @@
+import { useMemo, useState } from 'react';
 import { useAtom } from 'jotai';
 import { useQuery } from "@tanstack/react-query";
 import { Configuration, OpenAIApi } from "openai";
 import { itemAtom, powerAtom, encourageAtom } from "../state/State"
+import { Snackbar, IconButton } from '@mui/material';
+import {Close} from '@mui/icons-material';
 
 
 const useOpenAIApi = ({tone, goal, product, power}) => {
@@ -15,9 +18,9 @@ const useOpenAIApi = ({tone, goal, product, power}) => {
         return await openai.createCompletion({
             model: "text-davinci-003",
             prompt: `Using a ${tone} and informal tone, ${goal} my choice to buy a ${product}`,
-            max_tokens: 156,
+            max_tokens: 100,
             temperature: 0.9,
-        }).then(r => r).catch(e => { console.log(e) })
+        })
     }
 
     return useQuery({
@@ -36,8 +39,41 @@ const OpenAi = () => {
         product: (tone && item === "") ? "Strathmore Spiral Sketch Book 9-Inch by 12-Inch,100-Sheet" : (item || "Apple Pencil Tips - 4 Pack"),
         power: on
     })
+
+    const [open, setOpen] = useState(false);
+    const text = useMemo(()=>{
+        if(response.data !== undefined){
+            setOpen(true)
+            return JSON.parse(JSON.stringify(response.data)).data.choices?.[0]?.text
+
+        }
+            
+        return ""
+    },[response.isLoading, response.data])
     
-    return <>{JSON.stringify(response.data)}</>
+    
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+    
+        setOpen(false);
+      };
+
+    const action = (<>
+    <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleClose}
+      >
+        <Close fontSize="small" />
+      </IconButton>
+    </>)
+    return <>
+        <Snackbar open={open} sx={{ width: '10%' }} autoHideDuration={6000} onClose={handleClose} message={text} action={action}>
+            
+        </Snackbar></>
 }
 
 export default OpenAi
