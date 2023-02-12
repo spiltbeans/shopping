@@ -1,16 +1,17 @@
 import { Configuration, OpenAIApi } from "openai";
 
-const OpenAi = () => {
+const OpenAi = ({tone, goal, product}) => {
     const configuration = new Configuration({
         organization: process.env.REACT_APP_OPENAI_ORG, apiKey: process.env.REACT_APP_OPENAI_KEY 
     })
 
+
     const openai = new OpenAIApi(configuration)
     openai.createCompletion({
         model: "text-davinci-003",
-        prompt: "Using a friendly tone, validate my choice to buy a GRACE KARIN Womens Casual High Waist Pencil Pants with Bow-Knot Pockets for Work.",
+        prompt: `Using a ${tone} and informal tone, ${goal} my choice to buy a ${product}`,
         max_tokens: 156,
-        temperature: 0.8,
+        temperature: 1,
     }).then(r => console.log(r))
     return <></>
 }

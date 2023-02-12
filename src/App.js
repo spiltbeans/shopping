@@ -8,7 +8,7 @@ const App = () => {
       <Header/>
       <Options/>
       <Power/>
-      <Chatbot/>
+      {/*<Chatbot/>*/}
     </div>
 
   );
