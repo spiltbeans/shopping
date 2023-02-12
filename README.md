@@ -18,4 +18,5 @@
 ## REFERENCES
 - [Font: Titillium Web](https://fonts.google.com/specimen/Titillium+Web?category=Serif,Sans+Serif,Display,Monospace&preview.text=Eyas%20Valdez&preview.text_type=custom)
 - [Font: Barlow](https://fonts.google.com/specimen/Barlow?category=Serif,Sans+Serif,Display,Monospace&preview.text=Eyas%20Valdez&preview.text_type=custom)
+- [Extension video](https://www.youtube.com/watch?v=VP7q-c9_is8)
 ---

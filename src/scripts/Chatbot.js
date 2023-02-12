@@ -7,7 +7,7 @@ import { itemAtom, powerAtom, encourageAtom, restrainAtom } from "../state/State
 
 const useOpenAIApi = (tone, goal, product) => {
     const configuration = new Configuration({
-        organization: process.env.REACT_APP_OPENAI_ORG, apiKey: process.env.REACT_APP_OPENAI_KEY 
+        organization: process.env.REACT_APP_OPENAI_ORG, apiKey: process.env.REACT_APP_OPENAI_KEY
     })
 
     const openai = new OpenAIApi(configuration)

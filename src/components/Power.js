@@ -17,9 +17,10 @@ const Power = () => {
             flex
             justify-center
             py-2
+            items-center
             bg-slate-400
         `}>
-            <PowerSettingsNew className={`${power ? '' : 'backdrop-brightness-75'}`}fontSize={'large'} onClick={handleClick} />
+            <PowerSettingsNew className={`${power ? '' : 'backdrop-brightness-75'} hover:cursor`}fontSize={'large'} onClick={handleClick} />
         </div>
 
     )
