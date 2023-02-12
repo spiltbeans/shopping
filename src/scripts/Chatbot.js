@@ -4,7 +4,7 @@ import { Configuration, OpenAIApi } from "openai";
 import { itemAtom, powerAtom, encourageAtom } from "../state/State"
 
 
-const useOpenAIApi = ({tone, goal, product}) => {
+const useOpenAIApi = ({tone, goal, product, power}) => {
     const configuration = new Configuration({
         organization: process.env.REACT_APP_OPENAI_ORG, apiKey: process.env.REACT_APP_OPENAI_KEY
     })
@@ -21,18 +21,20 @@ const useOpenAIApi = ({tone, goal, product}) => {
     }
 
     return useQuery({
-        queryKey: ['advice'],
-        queryFn: product ? query_f : ()=>null
+        queryKey: [tone, product],
+        queryFn: product && power ? query_f : ()=>null
     })
 }
 
 const OpenAi = () => {
     const [item] = useAtom(itemAtom)
     const [tone] = useAtom(encourageAtom)
+    const [on] = useAtom(powerAtom)
     const response = useOpenAIApi({
         tone: tone ? "friendly" : "judgemental", 
         goal: tone ? "validate" : "dissuade", 
-        product: (tone && item === "") ? "Strathmore Spiral Sketch Book 9-Inch by 12-Inch,100-Sheet" : (item || "Apple Pencil Tips - 4 Pack")
+        product: (tone && item === "") ? "Strathmore Spiral Sketch Book 9-Inch by 12-Inch,100-Sheet" : (item || "Apple Pencil Tips - 4 Pack"),
+        power: on
     })
     
     return <>{JSON.stringify(response.data)}</>

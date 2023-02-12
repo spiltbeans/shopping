@@ -29,7 +29,7 @@ const Options = () => {
             <div className={`flex flex-row justify-center items-center`}>
                 <div className={`text-l`}>Restraint</div>
                 <Switch disabled={!power} inputProps={{ 'data-type': 'encourage' }} onChange={handleChange} checked={encourage} />
-                <div className={`text-l`}>Encouraging</div>
+                <div className={`text-l`}>Encouragement</div>
             </div>
         </div>
     )
