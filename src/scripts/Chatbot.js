@@ -18,8 +18,8 @@ const useOpenAIApi = ({ tone, goal, product, power }) => {
         return await openai.createCompletion({
             model: "text-davinci-003",
             prompt: `Using a ${tone} and informal tone, ${goal} my choice to buy a ${product}`,
-            max_tokens: 100,
-            temperature: 0.9,
+            max_tokens: 85,
+            temperature: 0.7,
         })
     }
 
