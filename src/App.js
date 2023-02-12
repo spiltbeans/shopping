@@ -2,7 +2,7 @@ import Header from './components/Header'
 import Options from './components/Options';
 import Power from './components/Power';
 import Chatbot from './scripts/Chatbot'
-import { QueryClient, QueryClientProvider } from '@tanstack/query-core';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const App = () => {
   const queryClient = new QueryClient()

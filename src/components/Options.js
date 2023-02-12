@@ -4,19 +4,16 @@ import { useAtom } from 'jotai'
 import { Switch } from '@mui/material'
 
 //Providers
-import { encourageAtom, restrainAtom, powerAtom } from '../state/State'
+import { encourageAtom, powerAtom } from '../state/State'
 //CSS
 
 const Options = () => {
 
     const [encourage, setEncourage] = useAtom(encourageAtom)
-    const [restrain, setRestrain] = useAtom(restrainAtom)
     const [power] = useAtom(powerAtom)
     const handleChange = e => {
         if (e.target.dataset.type === 'encourage') {
             setEncourage(prev => !prev)
-        } else if (e.target.dataset.type === 'restrain') {
-            setRestrain(prev => !prev)
         }
     }
     return (
@@ -29,16 +26,11 @@ const Options = () => {
             py-5
             items-center
         `}>
-            <div className={`flex flex-row justify-center`}>
-                <div className={`text-l`}>Encouraging</div>
+            <div className={`flex flex-row justify-center items-center`}>
+                <div className={`text-l`}>Restraint</div>
                 <Switch disabled={!power} inputProps={{ 'data-type': 'encourage' }} onChange={handleChange} checked={encourage} />
+                <div className={`text-l`}>Encouraging</div>
             </div>
-            <div className={`flex flex-row justify-center`}>
-                <div className={`text-l`}>Restraining</div>
-                <Switch disabled={!power} inputProps={{ 'data-type': 'restrain' }} onChange={handleChange} checked={restrain} />
-            </div>
-
-
         </div>
     )
 }
