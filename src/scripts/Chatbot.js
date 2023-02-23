@@ -5,9 +5,9 @@ import { Configuration, OpenAIApi } from "openai";
 import { itemAtom, powerAtom, encourageAtom } from "../state/State"
 import { Snackbar, IconButton } from '@mui/material';
 import { Close } from '@mui/icons-material';
+import ReactDOM from 'react-dom';
 
-
-const useOpenAIApi = ({ tone, goal, product, power }) => {
+const useOpenAIApi = ({ tone, goal, item, power }) => {
     const configuration = new Configuration({
         organization: process.env.REACT_APP_OPENAI_ORG, apiKey: process.env.REACT_APP_OPENAI_KEY
     })
@@ -17,34 +17,36 @@ const useOpenAIApi = ({ tone, goal, product, power }) => {
     const query_f = async () => {
         return await openai.createCompletion({
             model: "text-davinci-003",
-            prompt: `Using a ${tone} and informal tone, ${goal} my choice to buy a ${product}`,
+            prompt: `Using a ${tone} and informal tone, ${goal} my choice to buy a ${item}`,
             max_tokens: 100,
             temperature: 0.9,
         })
     }
 
     return useQuery({
-        queryKey: [tone, product],
-        queryFn: product && power ? query_f : () => null
+        queryKey: [tone, item],
+        queryFn: item && power ? query_f : () => null
     })
 }
 
 const OpenAi = () => {
     const [item] = useAtom(itemAtom)
     const [tone] = useAtom(encourageAtom)
-    const [on] = useAtom(powerAtom)
+    const [power] = useAtom(powerAtom)
+    console.log(item)
     const response = useOpenAIApi({
-        tone: tone ? "friendly" : "judgemental",
-        goal: tone ? "validate" : "dissuade",
-        product: (tone && item === "") ? "Strathmore Spiral Sketch Book 9-Inch by 12-Inch,100-Sheet" : (item || "Apple Pencil Tips - 4 Pack"),
-        power: on
+        tone: ((item).toString().toUpperCase().includes('PILOT')) ? "judgemental" : "friendly",
+        goal: ((item).toString().toUpperCase().includes('PILOT'))  ? "dissuade" : "validate",
+        item: item,
+        power: power
     })
 
     const [open, setOpen] = useState(false);
     const text = useMemo(() => {
+        console.log(response.data)
         if (response.data !== undefined) {
             setOpen(true)
-            return JSON.parse(JSON.stringify(response.data)).data.choices?.[0]?.text
+            return JSON.parse(JSON.stringify(response.data))?.data.choices?.[0]?.text
 
         }
 
@@ -53,6 +55,11 @@ const OpenAi = () => {
 
 
     const handleClose = (event, reason) => {
+
+        let s = document.getElementById('snackbar')
+        if (s.parentNode) {
+            s.parentNode.removeChild(s);
+        }
         if (reason === 'clickaway') {
             return;
         }
@@ -70,10 +77,12 @@ const OpenAi = () => {
             <Close fontSize="small" />
         </IconButton>
     </>)
-    return <>
-        <Snackbar open={open} sx={{ width: '10%' }} autoHideDuration={6000} onClose={handleClose} message={text} action={action}>
 
-        </Snackbar></>
+    const snack = document.createElement('div')
+    snack.id = "snackbar";
+    document.body.appendChild(snack)
+    ReactDOM.render(<Snackbar open={open} sx={{ width: '10%' }} autoHideDuration={6000} onClose={handleClose} message={text} action={action} />, snack)
+    return <></>
 }
 
 export default OpenAi

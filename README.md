@@ -20,4 +20,6 @@
 - [Font: Barlow](https://fonts.google.com/specimen/Barlow?category=Serif,Sans+Serif,Display,Monospace&preview.text=Eyas%20Valdez&preview.text_type=custom)
 - [Extension video](https://www.youtube.com/watch?v=VP7q-c9_is8)
 - [React as extension](https://itnext.io/create-chrome-extension-with-reactjs-using-inject-page-strategy-137650de1f39)
+- [Login extension](https://medium.com/swlh/create-a-email-password-login-system-for-your-chrome-extension-c36cff6d5e40)
+- [Connect background->forefront](https://www.youtube.com/watch?v=fPsBrYD0uGU)
 ---

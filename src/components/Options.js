@@ -14,6 +14,7 @@ const Options = () => {
     const handleChange = e => {
         if (e.target.dataset.type === 'encourage') {
             setEncourage(prev => !prev)
+            
         }
     }
     return (
