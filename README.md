@@ -22,4 +22,5 @@
 - [React as extension](https://itnext.io/create-chrome-extension-with-reactjs-using-inject-page-strategy-137650de1f39)
 - [Login extension](https://medium.com/swlh/create-a-email-password-login-system-for-your-chrome-extension-c36cff6d5e40)
 - [Connect background->forefront](https://www.youtube.com/watch?v=fPsBrYD0uGU)
+- [Purse sensitive data from commit history](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)
 ---
