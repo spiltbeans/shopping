@@ -11,9 +11,9 @@
 - Libraries/CSS: [OpenAI](https://platform.openai.com/docs/introduction), [MaterialUI](https://mui.com/material-ui/getting-started/overview/), [Tailwind](https://tailwindcss.com/)
 ---
 ## PRODUCTIVITY
-- [Notes/mindmappipng: Excalidraw](https://excalidraw.com/)
-- [Design: Figma](https://www.figma.com/)
-- [Code collaboration: Github](https://github.com/spiltbeans/shopping)
+- Notes/mindmappipng: [Excalidraw](https://excalidraw.com/)
+- Design: [Figma](https://www.figma.com/)
+- Code collaboration: [Github](https://github.com/spiltbeans/shopping)
 ---
 ## REFERENCES
 - [Font: Titillium Web](https://fonts.google.com/specimen/Titillium+Web?category=Serif,Sans+Serif,Display,Monospace&preview.text=Eyas%20Valdez&preview.text_type=custom)
