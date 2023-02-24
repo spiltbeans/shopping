@@ -8,7 +8,7 @@
 ---
 ## TECHNOLOGY
 - Framework: [React](https://reactjs.org/)
-- Libraries/CSS: [MaterialUI](https://mui.com/material-ui/getting-started/overview/), [Tailwind](https://tailwindcss.com/)
+- Libraries/CSS: [OpenAI](https://platform.openai.com/docs/introduction), [MaterialUI](https://mui.com/material-ui/getting-started/overview/), [Tailwind](https://tailwindcss.com/)
 ---
 ## PRODUCTIVITY
 - [Notes/mindmappipng: Excalidraw](https://excalidraw.com/)
